@@ -1,34 +1,18 @@
-
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
-    <title>My Chess Game</title>
-
-    <link rel="stylesheet" href="style.css"/>
-</head>
-
-<body>
-
-    <div class="game-container">
-
-        <h1>♟ Chess Game ♟</h1>
-
-        <h2 id="status">White's Turn</h2>
-
-        <div id="board"></div>
-
-        <div class="buttons">
-            <button onclick="undoMove()">Undo</button>
-            <button onclick="restartGame()">Restart</button>
-        </div>
-
-    </div>
-
-    <script src="script.js"></script>
-
-</body>
-</html>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chess Game with AI</title><link rel="stylesheet" href="style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.3/chess.min.js"></script>
+</head><body>
+<main class="game-container">
+<h1>♟ Chess Game ♟</h1><p>Play against the computer</p>
+<div class="toolbar">
+<label>Computer strength <select id="difficulty"><option value="1">Easy</option><option value="2" selected>Medium</option><option value="3">Hard</option></select></label>
+<label><input id="twoPlayer" type="checkbox"> Two-player mode</label>
+</div>
+<h2 id="status">White's turn</h2><div id="board" class="board"></div>
+<div class="buttons"><button id="undoBtn">Undo</button><button id="restartBtn">Restart</button></div>
+<section class="history-panel"><h3>Move history</h3><ol id="history"></ol></section>
+<p id="message">You play White. Select a piece, then its destination.</p>
+<small>Internet is needed to load the chess rules library.</small>
+</main><script src="script.js"></script></body></html>
